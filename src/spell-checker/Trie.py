@@ -1,4 +1,3 @@
-import sys
 from src.node.TrieNode import TrieNode
 
 
@@ -10,6 +9,8 @@ class Trie:
     def __contains__(self, word):
         """
         Returns if the word is in the trie.
+        :type word: str
+        :rtype: bool
         """
         root = self.root
         for c in word:
@@ -37,6 +38,8 @@ class Trie:
     def add(self, word):
         """
         Traverse the trie and add new nodes as we go.
+        :type word: str
+        :rtype: None
         """
         word = word.strip()
         root = self.root  # n is for "node"
@@ -45,3 +48,17 @@ class Trie:
                 root[c] = TrieNode()
             root = root[c]
         root.end_of_word = True
+
+    def starts_with(self, prefix):
+        """
+        Returns if there is any word in the trie that starts with the given prefix.
+        :type prefix: str
+        :rtype: bool
+        """
+        root = self.root
+        for c in prefix:
+            if c not in root:
+                return False
+            root = root[c]
+        return True
+
