@@ -46,6 +46,8 @@ class SpellChecker:
         """
         counter = self.counter
         total = sum(counter.values())
+        if not word or word.isdigit():
+            return 'No suggestion'
         if self.corrections(word):
             return max(self.corrections(word), key=lambda w: counter[w.lower()] / total)
         return 'No suggestion'
