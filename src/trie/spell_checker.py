@@ -1,6 +1,6 @@
 import string
 from collections import defaultdict
-from trie import Trie
+from src.trie.trie import Trie
 
 
 def one_edit(word):
