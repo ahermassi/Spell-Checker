@@ -1,4 +1,4 @@
-from src.node.TrieNode import TrieNode
+from src.node.trie_node import TrieNode
 
 
 class Trie:
@@ -12,6 +12,7 @@ class Trie:
         :type word: str
         :rtype: bool
         """
+        word = word.strip()
         root = self.root
         for c in word:
             if c not in root:  # This is equivalent to: if c not in root.children. See __contains__ method of TrieNode.
