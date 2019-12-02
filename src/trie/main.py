@@ -5,7 +5,7 @@ if __name__ == '__main__':
     print('\nThis is a simple deterministic spell checker. It corrects lower/upper case and mistyped vowels.')
     print('At the prompt, enter the word you want to spell check.\n')
 
-    spell_checker = SpellChecker()
+    spell_checker = SpellChecker('../words.txt')
 
     while True:
         word = input('> ')

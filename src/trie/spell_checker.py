@@ -28,13 +28,13 @@ def two_edits(word):
 
 class SpellChecker:
 
-    def __init__(self):
+    def __init__(self, file_name):
         """
         Load the list of words into the trie and construct a frequency map of the words.
         """
         self.dictionary = Trie()
         self.counter = defaultdict(int)
-        with open('../words.txt', 'r') as file:
+        with open(file_name, 'r') as file:
             for line in file:
                 for word in line.split():
                     self.dictionary.add(word.lower())
